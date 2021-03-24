@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const port = 4002;
 const axios = require("axios");
-const eventBusUrl = "http://localhost:4005/events";
+const eventBusUrl = "http://event-bus-svc:4005/events";
 
 const posts = {};
 

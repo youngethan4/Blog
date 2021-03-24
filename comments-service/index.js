@@ -4,7 +4,7 @@ const cors = require("cors");
 const port = 4001;
 const { randomBytes } = require("crypto");
 const axios = require("axios");
-const eventBusUrl = "http://localhost:4005/events";
+const eventBusUrl = "http://event-bus-svc:4005/events";
 
 const commentsByPostId = {};
 

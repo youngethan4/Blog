@@ -4,7 +4,7 @@ const cors = require("cors");
 const port = 4000;
 const { randomBytes } = require("crypto");
 const axios = require("axios");
-const eventBusUrl = "http://localhost:4005/events";
+const eventBusUrl = "http://event-bus-svc:4005/events";
 
 const posts = {};
 
@@ -41,5 +41,6 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(port, () => {
+  console.log("New version 0.0.3");
   console.log("Listening on " + port);
 });
