@@ -42,9 +42,13 @@ app.post("/events", (req, res) => {
 app.listen(port, async () => {
   console.log("Listening on " + port);
 
-  const res = await axios.get(eventBusUrl);
-  res.data.forEach((event) => {
-    console.log("Processing event: ", event.type);
-    handleEvent(event.type, event.data);
-  });
+  try {
+    const res = await axios.get(eventBusUrl);
+    res.data.forEach((event) => {
+      console.log("Processing event: ", event.type);
+      handleEvent(event.type, event.data);
+    });
+  } catch (err) {
+    console.error(err);
+  }
 });
